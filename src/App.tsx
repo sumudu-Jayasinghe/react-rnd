@@ -7,6 +7,7 @@ import { Home } from './home/Home';
 import { RndHome } from './rnd/RndHome';
 import { GamesHome } from './games/GamesHome';
 import { UserView } from './rnd/git-users/UserView';
+import { PromptView } from './rnd/prompt/PromptView';
 
 class App extends Component {
   render() {
@@ -27,6 +28,7 @@ class App extends Component {
             <Route path='/' exact component={Home} />
             <Route path='/rnd' exact component={RndHome} />
             <Route path='/rnd/git' exact component={UserView} />
+            <Route path='/rnd/prompt' exact component={PromptView} />
             <Route path='/games' exact component={GamesHome} />
           </div>
         </div>

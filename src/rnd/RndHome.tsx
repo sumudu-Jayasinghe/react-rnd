@@ -9,6 +9,7 @@ export const RndHome = ()=>{
         <hr className='my-4' />
        
         <NavLink to="/rnd/git" className="lnk-btn btn btn-light btn-lg">Git User Fetch</NavLink>
+        <NavLink to="/rnd/prompt" className="lnk-btn btn btn-light btn-lg">Prompt on Leave</NavLink>
         
       </div>
     )

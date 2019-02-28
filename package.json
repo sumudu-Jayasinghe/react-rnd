@@ -1,6 +1,7 @@
 {
   "name": "ts-react",
   "version": "0.1.0",
+  "homepage": "./",
   "private": true,
   "dependencies": {
     "@types/jest": "24.0.9",
@@ -16,7 +17,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "prebuild": "rimraf docs -f",
     "build": "react-scripts build",
+    "postbuild": "copyfiles --up -V --all --flat ./build/*.* ./docs",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -28,5 +31,10 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "copyfiles": "^2.1.0",
+    "del-cli": "^1.1.0",
+    "rimraf": "^2.6.3"
+  }
 }
