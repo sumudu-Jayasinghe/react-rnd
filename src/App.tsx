@@ -2,7 +2,7 @@ import React, { Component, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Topnav } from './layout/TopNav';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import { Home } from './home/Home';
 import { RndHome } from './rnd/RndHome';
 import { GamesHome } from './games/GamesHome';
