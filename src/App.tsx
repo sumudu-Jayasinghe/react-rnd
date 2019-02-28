@@ -2,12 +2,15 @@ import React, { Component, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Topnav } from './layout/TopNav';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import { Home } from './home/Home';
 import { RndHome } from './rnd/RndHome';
 import { GamesHome } from './games/GamesHome';
 import { UserView } from './rnd/git-users/UserView';
 import { PromptView } from './rnd/prompt/PromptView';
+import { NotFound } from './layout/NotFound';
+import { RouteParams } from './rnd/route-params/RouteParams';
+import ParamsView from './rnd/params/ParamsView';
 
 class App extends Component {
   render() {
@@ -25,11 +28,16 @@ class App extends Component {
             <Topnav />
           </nav>
           <div className='content' style={{ marginTop: '60px' }}>
-            <Route path='/' exact component={Home} />
-            <Route path='/rnd' exact component={RndHome} />
-            <Route path='/rnd/git' exact component={UserView} />
-            <Route path='/rnd/prompt' exact component={PromptView} />
-            <Route path='/games' exact component={GamesHome} />
+            <Switch>
+              <Route path='/' exact component={Home} />
+              <Route path='/rnd'  exact component={RndHome} />
+              <Route path='/rnd/git'  exact component={UserView} />
+              <Route path='/rnd/prompt' exact component={PromptView} />
+              <Route path='/rnd/rp' exact component={RouteParams} />
+              <Route path='/rnd/params' exact render={()=><ParamsView message="Test message" color="yellow"/>} />
+              <Route path='/games' component={GamesHome} />
+              <Route component={NotFound} />
+            </Switch>
           </div>
         </div>
       </Router>
